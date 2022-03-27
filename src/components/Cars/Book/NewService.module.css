@@ -1,0 +1,69 @@
+.new-service {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.service-form {
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  list-style: none;
+}
+
+.service-date-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.service-date-box .control,
+.control {
+  margin: 0.5rem 0;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.control label,
+.control input {
+  display: block;
+  width: 100%;
+}
+
+.control label {
+  font-weight: bold;
+  flex: 1;
+  color: #464646;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  flex: 3;
+  font: inherit;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #b6b6b6;
+  background: #fff;
+}
+
+.actions {
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .service-date-box .control {
+    width: 45%;
+  }
+  .new-service {
+    width: 50%;
+  }
+}

@@ -1,0 +1,57 @@
+.car-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car-services-box {
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.car-services-list {
+  padding: 0 1rem;
+  width: 100%;
+  
+  
+}
+
+.car-services-list ul {
+  padding: 1.5rem 2rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.car-services-list ul li {
+  font-size: smaller;
+  width: 100%;
+}
+
+.car-services-list ul li:nth-child(2),
+.car-services-list ul li:nth-child(3) {
+  width: 50%;
+}
+
+.car-services-list ul li p {
+  margin-top: 0.5rem;
+  color: #333;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.button-add {
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .car-services-list {
+      width: 50%;
+  }
+}

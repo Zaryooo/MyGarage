@@ -1,0 +1,32 @@
+
+
+.car-info-list {
+  overflow: hidden;
+}
+
+.car-info-list ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  align-self:flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.car-info-list ul li {
+  width: 10%;
+  flex: 10%;
+  margin-bottom: 1rem;
+  color: rgb(219, 219, 219);
+  font-size: smaller;
+}
+
+.car-info-list ul li p {
+  margin: 0.25rem 0;
+  color: rgb(253, 253, 253);
+  font-size: large;
+  font-weight: 700;
+}
