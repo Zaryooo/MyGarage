@@ -66,7 +66,7 @@ const NewService = (props) => {
     const date = `${day}-${month}-${year}`;
 
     const serviceId = uid();
-    set(ref(db, `/${props.userId}/cars/${props.carId}/services/${serviceId}`), {
+    set(ref(db, `users/${props.userId}/cars/${props.carId}/services/${serviceId}`), {
       serviceId: serviceId,
       service: nameState.value,
       mileage: mileageState.value,

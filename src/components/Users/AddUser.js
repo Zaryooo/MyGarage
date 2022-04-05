@@ -16,7 +16,7 @@ const AddUser = (props) => {
   const [emailIsValid, setEmailIsValid] = useState();
   const [isFormValid, setIsFormValid] = useState(false);
 
-  const onAddHandler = (e) => {
+  const onChangeHandler = (e) => {
     setUserEmail(e.target.value);
     if (e.target.value.includes('@')) {
       setEmailIsValid(true);
@@ -27,12 +27,12 @@ const AddUser = (props) => {
     }
   };
 
-  const writeToDatabase = () => {
+  const onAddHandler = () => {
     const userId = uid();
-    set(ref(db, `/${userId}`), {
-      email: userEmail,
+    set(ref(db, 'users/' + userId), {
       userId: userId,
-      cars: 'none',
+      email: userEmail,
+      cars: [],
     });
 
     setUserEmail('');
@@ -48,12 +48,12 @@ const AddUser = (props) => {
           type="text"
           value={userEmail}
           isValid={emailIsValid}
-          onChange={onAddHandler}
+          onChange={onChangeHandler}
         />
         <div className={classes.actions}>
           <Button
             type="submit"
-            onClick={writeToDatabase}
+            onClick={onAddHandler}
             className={classes.btn}
             disabled={!isFormValid}
           >

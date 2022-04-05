@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 
 import Wrapper from '../UI/Wrapper/Wrapper';
 import CarInfo from './Info/CarInfo';
@@ -13,31 +13,14 @@ import { set, ref } from 'firebase/database';
 
 const Cars = (props) => {
   const [addCarForm, setAddCarForm] = useState(false);
-  const [loadCarInfo, setLoadCarInfo] = useState('6e1dc362ead');
-
-  const loadedCars = [];
-
-  const cars = props.cars;
-  for (const car in cars) {
-    loadedCars.push({
-      carId: car,
-      brand: cars[car].brand,
-      series: cars[car].series,
-      model: cars[car].model,
-      year: cars[car].year,
-      mileage: cars[car].mileage,
-      engine: cars[car].engine,
-      services: cars[car].services,
-    });
-  }
-  
+  const [loadCarInfo, setLoadCarInfo] = useState('7c3efb69fd9');
 
   const onPickedCar = (event) => {
     setLoadCarInfo(event.target.dataset.id);
     setAddCarForm(false);
   };
 
-  const listCars = loadedCars.map((car) => {
+  const listCars = props.cars.map((car) => {
     return (
       <li key={car.carId}>
         <button onClick={onPickedCar} data-id={car.carId}>
@@ -53,7 +36,7 @@ const Cars = (props) => {
 
   const onAddCarHandler = (car) => {
     const carId = uid();
-    set(ref(db, `/${props.userId}/cars/${carId}`), {
+    set(ref(db, `/users/${props.userId}/cars/${carId}`), {
       carId: carId,
       brand: car.brand,
       model: car.model,
@@ -61,15 +44,13 @@ const Cars = (props) => {
       year: car.year,
       engine: car.engine,
       mileage: car.mileage,
-      services: 'none',
+      services: [],
     });
   };
 
   const onCloseHandler = () => {
     setAddCarForm(false);
   };
-
-  
 
   return (
     <Wrapper>
@@ -82,8 +63,20 @@ const Cars = (props) => {
         </ul>
       </div>
       <div className={classes['car-info']}>
-        {!addCarForm && <CarInfo cars={loadedCars} loadCarId={loadCarInfo} userId={props.userId}/>}
-        {!addCarForm && <CarServices cars={loadedCars} carId={loadCarInfo} userId={props.userId}/>}
+        {!addCarForm && (
+          <CarInfo
+            cars={props.cars}
+            loadCarId={loadCarInfo}
+            userId={props.userId}
+          />
+        )}
+        {!addCarForm && (
+          <CarServices
+            cars={props.cars}
+            carId={loadCarInfo}
+            userId={props.userId}
+          />
+        )}
         {addCarForm && (
           <AddCar onAdd={onAddCarHandler} onClose={onCloseHandler} />
         )}
