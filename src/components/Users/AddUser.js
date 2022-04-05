@@ -32,7 +32,7 @@ const AddUser = (props) => {
     set(ref(db, 'users/' + userId), {
       userId: userId,
       email: userEmail,
-      cars: [],
+      cars: [], 
     });
 
     setUserEmail('');
