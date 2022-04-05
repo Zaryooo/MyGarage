@@ -1,15 +1,15 @@
 {
-  "main.css": "/MyGarage/static/css/main.67d2cf01.chunk.css",
-  "main.js": "/MyGarage/static/js/main.bbd3f9e8.chunk.js",
-  "main.js.map": "/MyGarage/static/js/main.bbd3f9e8.chunk.js.map",
-  "static/js/1.458b627e.chunk.js": "/MyGarage/static/js/1.458b627e.chunk.js",
-  "static/js/1.458b627e.chunk.js.map": "/MyGarage/static/js/1.458b627e.chunk.js.map",
+  "main.css": "/MyGarage/static/css/main.143b78be.chunk.css",
+  "main.js": "/MyGarage/static/js/main.da1cb032.chunk.js",
+  "main.js.map": "/MyGarage/static/js/main.da1cb032.chunk.js.map",
+  "static/js/1.6bd448bb.chunk.js": "/MyGarage/static/js/1.6bd448bb.chunk.js",
+  "static/js/1.6bd448bb.chunk.js.map": "/MyGarage/static/js/1.6bd448bb.chunk.js.map",
   "runtime~main.js": "/MyGarage/static/js/runtime~main.b2839719.js",
   "runtime~main.js.map": "/MyGarage/static/js/runtime~main.b2839719.js.map",
   "static/media/formula.jfif": "/MyGarage/static/media/formula.e8447ff3.jfif",
   "static/media/Awesome-garage.jfif": "/MyGarage/static/media/Awesome-garage.c6ae908c.jfif",
-  "static/css/main.67d2cf01.chunk.css.map": "/MyGarage/static/css/main.67d2cf01.chunk.css.map",
+  "static/css/main.143b78be.chunk.css.map": "/MyGarage/static/css/main.143b78be.chunk.css.map",
   "index.html": "/MyGarage/index.html",
-  "precache-manifest.abe3100a6636d405f797df3ab6f3bc05.js": "/MyGarage/precache-manifest.abe3100a6636d405f797df3ab6f3bc05.js",
+  "precache-manifest.a11caeb4465253e95c0414bc14414682.js": "/MyGarage/precache-manifest.a11caeb4465253e95c0414bc14414682.js",
   "service-worker.js": "/MyGarage/service-worker.js"
 }

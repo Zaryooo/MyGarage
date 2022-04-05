@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "bbd3f9e807e90c6106ea",
-    "url": "/MyGarage/static/css/main.67d2cf01.chunk.css"
+    "revision": "da1cb0325931b9e1e163",
+    "url": "/MyGarage/static/css/main.143b78be.chunk.css"
   },
   {
-    "revision": "bbd3f9e807e90c6106ea",
-    "url": "/MyGarage/static/js/main.bbd3f9e8.chunk.js"
+    "revision": "da1cb0325931b9e1e163",
+    "url": "/MyGarage/static/js/main.da1cb032.chunk.js"
   },
   {
-    "revision": "458b627e932734e01724",
-    "url": "/MyGarage/static/js/1.458b627e.chunk.js"
+    "revision": "6bd448bbe10b4a202703",
+    "url": "/MyGarage/static/js/1.6bd448bb.chunk.js"
   },
   {
     "revision": "b283971930ab605de99a",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/MyGarage/static/media/Awesome-garage.c6ae908c.jfif"
   },
   {
-    "revision": "dea0452ae00709d2e1eb96b6e68c8d32",
+    "revision": "9dd8eca7357084ebcfddfd6702fbcc46",
     "url": "/MyGarage/index.html"
   }
 ];
