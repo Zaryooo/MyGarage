@@ -19,7 +19,7 @@ const Garage = (props) => {
 
   useEffect(() => {
     onValue(ref(db, 'users'), (snapshot) => {
-      const data = snapshot.val();
+      const data = snapshot.val(); 
       if (data !== null) {
         const user = Object.values(data).find((data, user) => {
           if (user.email === 'test@test.bg') {
