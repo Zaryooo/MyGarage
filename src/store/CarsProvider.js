@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react';
+import React, { useReducer} from 'react';
 import CarsContext from './cars-context';
 
 const defaultCarsState = {

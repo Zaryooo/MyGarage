@@ -1,19 +1,17 @@
-import React, { useContext } from 'react';
-
-import Wrapper from '../../UI/Wrapper/Wrapper';
+import React from 'react';
 
 import classes from './CarInfo.module.css';
 
 const CarInfo = (props) => {
   const pickedCar = props.cars.filter((car) => car.carId === props.loadCarId);
 
-  const onAddHandler = (service) => {
-    const getServices = pickedCar.map((car) => {
-      return car.services;
-    });
-    getServices[0].push(service);
-    props.editCar(pickedCar);
-  };
+  // const onAddHandler = (service) => {
+  //   const getServices = pickedCar.map((car) => {
+  //     return car.services;
+  //   });
+  //   getServices[0].push(service);
+  //   props.editCar(pickedCar);
+  // };
 
   const infoCar = pickedCar.map((car) => {
     return (
@@ -45,10 +43,10 @@ const CarInfo = (props) => {
   
 
   return (
-    <Wrapper>
+    <React.Fragment>
       {infoCar}
       
-    </Wrapper>
+    </React.Fragment>
   );
 };
 

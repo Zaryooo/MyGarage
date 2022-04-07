@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useReducer, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
@@ -27,10 +28,8 @@ const passwordReducer = (state, action) => {
 };
 
 const Login = (props) => {
-  // const [enteredEmail, setEnteredEmail] = useState('');
-  // const [emailIsValid, setEmailIsValid] = useState();
-  // const [enteredPassword, setEnteredPassword] = useState('');
-  // const [passwordIsValid, setPasswordIsValid] = useState();
+  const navigate = useNavigate();
+
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
@@ -44,57 +43,42 @@ const Login = (props) => {
 
   const authCtx = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   console.log('EFFECT RUNNING');
-
-  //   return () => {
-  //     console.log('EFFECT CLEANUP');
-  //   };
-  // }, []);
-
   const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
   useEffect(() => {
     const identifier = setTimeout(() => {
-      //console.log('Checking form validity!');
       setFormIsValid(emailIsValid && passwordIsValid);
     }, 500);
 
     return () => {
-      //console.log('CLEANUP');
       clearTimeout(identifier);
     };
   }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (event) => {
-    //setEnteredEmail(event.target.value);
     dispatchEmail({ type: 'USER_INPUT', val: event.target.value });
-
-    // setFormIsValid(emailState.isValid && passwordState.isValid);
   };
 
   const passwordChangeHandler = (event) => {
-    //setEnteredPassword(event.target.value);
     dispatchPassword({ type: 'USER_INPUT', val: event.target.value });
 
-    // setFormIsValid(emailState.isValid && passwordState.isValid);
   };
 
   const validateEmailHandler = () => {
-    //setEmailIsValid(enteredEmail.includes('@'));
     dispatchEmail({ type: 'INPUT_BLUR' });
   };
 
   const validatePasswordHandler = () => {
-    //setPasswordIsValid(enteredPassword.trim().length > 6);
     dispatchPassword({ type: 'INPUT_BLUR' });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     authCtx.onLogin(emailState.value, passwordState.value);
+    navigate("/garage");
   };
+
 
   return (
     <Card className={classes.login}>

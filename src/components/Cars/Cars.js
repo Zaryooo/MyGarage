@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import Wrapper from '../UI/Wrapper/Wrapper';
 import CarInfo from './Info/CarInfo';
 import CarServices from './Book/CarServices';
 
@@ -53,7 +52,7 @@ const Cars = (props) => {
   };
 
   return (
-    <Wrapper>
+    <React.Fragment>
       <div className={classes['cars-list']}>
         <ul>
           {listCars}
@@ -81,7 +80,7 @@ const Cars = (props) => {
           <AddCar onAdd={onAddCarHandler} onClose={onCloseHandler} />
         )}
       </div>
-    </Wrapper>
+    </React.Fragment>
   );
 };
 

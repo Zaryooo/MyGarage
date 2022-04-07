@@ -46,7 +46,7 @@ const CarServices = (props) => {
     );
   });
 
-  const addNewService = (service) => {
+  const addNewService = () => {
     setShowAddForm(false);
   };
 

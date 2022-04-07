@@ -1,21 +1,25 @@
 import React, { useContext } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Home from './components/Home/Home';
-import Garage from './components/Garage/Garage';
-import Header from './components/Header/Header';
+import Home from './pages/Home';
+import Garage from './pages/Garage';
 import AuthContext from './store/auth-context';
-import CarsProvider from './store/CarsProvider';
-function App(props) {
+import Account from './pages/Account';
+import Registration from './components/Login/Registration';
+import Layout from './components/Layout/Layout';
+
+function App() {
   const ctx = useContext(AuthContext);
 
   return (
-    <CarsProvider>
-      <Header />
-      <main>
-        {!ctx.isLoggedIn && <Home />}
-        {ctx.isLoggedIn && <Garage />}
-      </main>
-    </CarsProvider>
+    <Layout>
+      <Routes>
+        <Route path="/account" element={<Account/>}/>
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/" element={!ctx.isLoggedIn && <Home />}/>
+        <Route path="/garage" element={ctx.isLoggedIn && <Garage />}/>
+      </Routes>
+    </Layout>
   );
 }
 
