@@ -15,7 +15,7 @@ const Navigation = () => {
             <NavLink
               to="/"
               onClick={ctx.onLogout}
-              className={(navData) => (navData.isActive ? 'active' : '')}
+              className={`${classes.button} ${(navData) => (navData.isActive ? 'active' : '')}`}
             >
               Logout
             </NavLink>
@@ -27,7 +27,7 @@ const Navigation = () => {
           <li>
             <NavLink
               to="/account"
-              className={(navData) => (navData.isActive ? 'active' : '')}
+              className={`${classes.button} ${(navData) => (navData.isActive ? 'active' : '')}`}
             >
               Account
             </NavLink>

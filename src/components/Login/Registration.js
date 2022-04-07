@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Card from '../UI/Card/Card';
 import Input from '../UI/Input/Input';
@@ -10,7 +11,8 @@ import { db } from '../../firebase';
 import { uid } from 'uid';
 import { set, ref } from 'firebase/database';
 
-const AddUser = (props) => {
+const AddUser = () => {
+  const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState('');
   const [emailIsValid, setEmailIsValid] = useState();
   const [isFormValid, setIsFormValid] = useState(false);
@@ -35,7 +37,7 @@ const AddUser = (props) => {
     });
 
     setUserEmail('');
-    props.onFill();
+    navigate('/account');
   };
 
   return (
@@ -48,6 +50,12 @@ const AddUser = (props) => {
           value={userEmail}
           isValid={emailIsValid}
           onChange={onChangeHandler}
+        />
+        <Input
+          id="password"
+          label="Password"
+          type="password"
+          
         />
         <div className={classes.actions}>
           <Button

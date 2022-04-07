@@ -22,7 +22,7 @@
   color: #c2c2c2;
 }
 
-.nav button {
+.nav .button {
   font: inherit;
   background: #ffffff;
   border: 1px solid #535353;
@@ -33,12 +33,12 @@
   border-radius: 20px;
 }
 
-.nav button:focus {
+.nav .button:focus {
   outline: none;
 }
 
-.nav button:hover,
-.nav button:active {
+.nav .button:hover,
+.nav .button:active {
   color: #5c5c5c;
   border: 1px solid #535353;
   background-color: #d3d3d3;
